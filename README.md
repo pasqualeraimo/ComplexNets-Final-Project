@@ -46,3 +46,34 @@ To run this project, you need Python 3.x and the following libraries:
 You can install these dependencies using pip:
 ```bash
 pip install pandas numpy scipy networkx tqdm
+```
+
+## Usage
+
+This project is primarily designed to be run within a Jupyter Notebook environment.
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/pasqualeraimo/ComplexNets-Final-Project](https://github.com/pasqualeraimo/ComplexNets-Final-Project)
+    cd YourRepoName
+    ```
+2.  **Place your dataset:** Ensure your `04_Recipe-Ingredients_Aliases.csv` file (or your equivalent dataset) is located in the specified `file_path` (e.g., `./culinaryDB/`).
+3.  **Open the Jupyter Notebook:** Organize the provided Python code into separate cells as outlined in the provided Jupyter Notebook Markdown structure.
+4.  **Adjust Parameters:**
+    * Update `file_path` in the main execution block to correctly point to your dataset.
+    * Modify `sample_percentage` (e.g., `0.20` for 20% of recipes) and `threshold_weight` (e.g., `7` for sharing more than 7 ingredients) parameters in the `build_cooccurrence_matrix_fast` function call based on your dataset size and desired network density.
+5.  **Execute Cells:** Run the Jupyter Notebook cells sequentially from top to bottom.
+
+## Output
+
+Upon successful execution, the script will:
+
+* Print various debugging and progress messages to the console, including matrix dimensions, number of non-zero entries, and graph statistics.
+* Generate a `.net` file (e.g., `recipe_similarity_network.net`) in the project directory. This file represents the final recipe co-occurrence graph and can be imported into network visualization software (like Gephi) for interactive exploration and advanced analysis.
+
+## Acknowledgements & References
+
+This project draws inspiration from methodologies used in the complex network analysis of culinary systems. Specifically, related work often explores the bipartite networks of recipes and ingredients to derive co-occurrence patterns, similar to the approach found in research papers such as:
+
+* Caprioli, C., Kulkarni, S., Battiston, F., Iacopini, I., Santoro, A., & Latora, V. (Year). *The networks of ingredient combination in cuisines around the world*. (You might want to check the full citation if it's the `cuisine.pdf` paper you referenced).
+* 
